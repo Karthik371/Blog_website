@@ -1,0 +1,32 @@
+<%- include ("partials/header.ejs") -%>
+<div class="nav">
+  <h2><i class="fas fa-user-friends"></i> USERS</h2>
+  <ul>
+    <a href="/main"
+      ><li><i class="fas fa-home homeicon"></i> Home</li></a
+    >
+    <a href="/create"
+      ><li><i class="far fa-plus-square"> </i> Create</li></a
+    >
+    <a href="/Logout"
+      ><li><i class="fas fa-sign-out-alt"></i> Logout</li></a
+    >
+  </ul>
+</div>
+<div>
+  <div class="user">
+    <h4><%=user%>'s Blog</h4>
+  </div>
+
+  <%founduser.forEach((user) => { %>
+
+  <div class="users-list">
+    <div class="users">
+      <p>
+        <%=user.content.substring(0,100) +"..." %>
+        <a href="/users/<%=user._id%>">Read</a>
+      </p>
+    </div>
+  </div>
+  <%});%>
+</div>
